@@ -114,11 +114,17 @@ namespace CharTween
                     Destroy(pair.Value.gameObject);
             }
 
-            foreach (var tween in _activeColorTweens)
-                tween.Kill();
+            if (_activeColorTweens != null)
+            {
+                foreach (var tween in _activeColorTweens)
+                    tween.Kill();
+            }
 
-            foreach (var tween in _activeVertexTweens)
-                tween.Kill();
+            if (_activeVertexTweens != null)
+            {
+                foreach (var tween in _activeVertexTweens)
+                    tween.Kill();
+            }
         }
 
         public TMP_Text Text { get; set; }
@@ -126,7 +132,7 @@ namespace CharTween
         public int CharacterCount { get { return Text ? Text.textInfo.characterCount : 0; } }
 
         /// <summary>
-        /// Must be called after <see cref="Text"/> is assigned. This is handled automatically when calling 
+        /// Must be called after <see cref="Text"/> is assigned. This is handled automatically when calling
         /// <see cref="CharTweenerUtility.GetCharTweener"/>.
         /// </summary>
         public void Initialize()
@@ -290,7 +296,7 @@ namespace CharTween
 
                 if (!charInfo.isVisible || !proxy)
                     continue;
-                
+
                 var materialIndex = charInfo.materialReferenceIndex;
                 var vertexIndex = charInfo.vertexIndex;
                 var sourceVertices = _meshCache[materialIndex].vertices;
