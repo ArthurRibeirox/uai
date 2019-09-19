@@ -22,6 +22,9 @@ namespace TimelineExtensions
 
         public override void ProcessFrame(Playable playable, FrameData info, object playerData)
         {
+            if (!Application.isPlaying)
+                return;
+
             if (textMesh == null)
             {
                 textMesh = playerData as TextMeshProUGUI;
