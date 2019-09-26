@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.u.a.i.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "F:\\Development\\Unity\\U.A.I\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "U.A.I [Testing]"
+        }
+      }
+    }
+  ]
+}
